@@ -1,1 +1,20 @@
+h1{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
 
+html{
+	text-align: center;
+	margin-top: 5px;
+	font-family: Arial;
+}
+
+#header{
+	height: 75px;
+	background-color: #add8e6;
+	margin-top: 0px;
+}
+
+#output{
+	text-align: left;
+}
