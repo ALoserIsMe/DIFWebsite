@@ -18,3 +18,11 @@ html{
 #output{
 	text-align: left;
 }
+
+.button {
+	text-align: center;
+	border-style: solid;
+	color: black;
+	background-color: #add8e6;
+	
+}
