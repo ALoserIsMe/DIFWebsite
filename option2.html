@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
+	<body>
+		<h1 id="header">Option 2</h1>
+		<form>
+			<label for="medicineName">First Medicine Name:</label><br>
+			<input type="text" id="medicineName1" name="medicineName1"><br>
+			<label for="medicineName">Second Medicine Name:</label><br>
+			<input type="text" id="medicineName2" name="medicineName2"><br>
+			<input type="button" onclick="getInput()" value="Submit"><br>
+		</form>
+		
+		<p>Is there an interaction?</p>
+		<p id="output"></p>
+		
+		<script type="text/javascript" src="js/backend.js"></script>
+		<script>
+			function getInput(){
+				var input1IsValid = false;
+				var input2Isvalid = false;
+				var interaction = false;
+				var usersInput1   = document.getElementById("medicineName1").value;
+				usersInput1 = usersInput1.toLowerCase()
+				var usersInput2   = document.getElementById("medicineName2").value;
+				usersInput2 = usersInput2.toLowerCase()
+				
+				if (validateInput(usersInput1) == true && validateInput(usersInput2) == true){
+					var medicine1Column = columnSearch(usersInput1);
+					var medicine2Column = columnSearch(usersInput2);
+					
+					for (x = 0; x < medicine1Column.length; x++){
+						for (y = 0; y < medicine2Column.length; y++){
+							if (medicine1Column[x] == medicine2Column[y]){
+								interaction = true;
+							}
+						}
+					}
+					
+					if (interaction == true){
+						document.getElementById("output").innerHTML = "Yes";
+					} else {
+						document.getElementById("output").innerHTML = "No";
+					}
+				} else {
+					alert("One of your inputs are invalid");
+				}
+			}
+		</script>
+	</body>
+</html>
